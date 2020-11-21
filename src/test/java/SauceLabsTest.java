@@ -11,8 +11,8 @@ public class SauceLabsTest {
 
     @BeforeSuite
     private void setup(){
-        System.setProperty("webdriver.gecko.driver","src/test/resources/drivers/macOS/fireFox/geckodriver" );
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/macOS/chrome/chromedriver87" );
+        driver = new ChromeDriver();
     }
 
     @AfterSuite
@@ -26,6 +26,6 @@ public class SauceLabsTest {
     }
 
     private void openMainPage() {
-        driver.get("https://www.linkedin.com/in/ilia-pavlov-ny34722/");
+        driver.get("https://www.nytimes.com");
     }
 }
