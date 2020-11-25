@@ -1,7 +1,7 @@
 package utilites;
 
 
-
+import org.testng.log4testng.Logger;
 
 public class Log {
     //Initialize Log4j instance
