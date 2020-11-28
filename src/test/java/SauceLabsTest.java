@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import tests.AssertErrorMessages;
-import utilites.Log;
 
 public class SauceLabsTest {
 
@@ -27,7 +26,7 @@ public class SauceLabsTest {
     }
     @BeforeTest
     private void acceptCookie() {
-        Log.startLog("");
+        //Log.startLog("");
 
         String xpath = "//a[@aria-label='dismiss cookie message']";
         By elementToWait = By.xpath(xpath);
@@ -39,7 +38,7 @@ public class SauceLabsTest {
     }
     @AfterSuite
     private void afterSuit() {
-        Log.startLog("");
+       // Log.startLog("");
         driver.quit();
 
     }
