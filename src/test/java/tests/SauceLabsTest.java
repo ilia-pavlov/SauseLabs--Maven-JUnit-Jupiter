@@ -1,8 +1,10 @@
 package tests;
 
-import  ErrorMassages.AssertErrorMessages;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import pages.MainPage;
 import pages.PricingPage;
 
@@ -10,6 +12,7 @@ import pages.PricingPage;
 public class SauceLabsTest extends BaseTest {
 
     @Test //positive test
+    @DisplayName("Price after added unlimited minutes to Virtual Cloud ")
     public void priceAfterAddLimitedMinutesVirtualCloud() throws InterruptedException {
         int expectedPrice = 298;
 
@@ -20,11 +23,11 @@ public class SauceLabsTest extends BaseTest {
         pricingPage.clickOnCheckBox();
         int actualPrice = pricingPage.verifyPrice();
 
-        Assert.assertEquals(actualPrice, expectedPrice, AssertErrorMessages.AMOUNT_OF_PRICE);
+        Assert.assertEquals(expectedPrice, actualPrice);
     }
 
     @Test //negative test
-    public void priceAfterAddLimitedMinutesVirtualCloudNegative() throws InterruptedException {
+    public void priceAfterAddLimitedMinutesVirtualCloudNegative01() throws InterruptedException {
         int expectedPrice = 297;
 
         MainPage mainPage = new MainPage(driver);
@@ -34,9 +37,25 @@ public class SauceLabsTest extends BaseTest {
         pricingPage.clickOnCheckBox();
         int actualPrice = pricingPage.verifyPrice();
 
-        Assert.assertEquals(actualPrice, expectedPrice, AssertErrorMessages.AMOUNT_OF_PRICE);
+        Assert.assertEquals(expectedPrice, actualPrice);
+    }
+
+    @Test
+    @Disabled("Not implemented yet")
+    public void priceAfterAddLimitedMinutesVirtualCloudNegative02() throws InterruptedException {
+        int expectedPrice = 100;
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickPricingPage();
+
+        PricingPage pricingPage = new PricingPage(driver);
+        pricingPage.clickOnCheckBox();
+        int actualPrice = pricingPage.verifyPrice();
+
+        Assert.assertEquals(expectedPrice, actualPrice);
     }
 }
+
 
 
 
