@@ -2,7 +2,7 @@ package tests;
 
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import pages.MainPage;
@@ -12,7 +12,7 @@ import pages.PricingPage;
 public class SauceLabsTest extends BaseTest {
 
     @Test //positive test
-    @DisplayName("Price after added unlimited minutes to Virtual Cloud ")
+    @DisplayName("Price after selected unlimited minutes to Virtual Cloud ")
     public void priceAfterAddLimitedMinutesVirtualCloud() throws InterruptedException {
         int expectedPrice = 298;
 
@@ -27,6 +27,7 @@ public class SauceLabsTest extends BaseTest {
     }
 
     @Test //negative test
+    @DisplayName("Negative wrong expectation variables")
     public void priceAfterAddLimitedMinutesVirtualCloudNegative01() throws InterruptedException {
         int expectedPrice = 297;
 

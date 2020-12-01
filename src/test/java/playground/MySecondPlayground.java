@@ -1,21 +1,11 @@
 package playground;
 
-
-
-
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.NumberFormat;
 import java.util.Arrays;
 
-public class playground {
-    @Test
-    public void testArraysToString() {
-        int[] numbers = {2, 3, 5, 1, 4};
-        System.out.println(numbers.length);
-
-        System.out.println(Arrays.toString(numbers));
-    }
+public class MySecondPlayground {
 
     @Test
     public void testArraySort() {
@@ -98,7 +88,4 @@ public class playground {
         String result = NumberFormat.getPercentInstance().format(0.2);
         System.out.println(result);
     }
-
 }
-
-

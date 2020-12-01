@@ -2,7 +2,8 @@ package tests;
 
 
 import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +18,8 @@ public class BaseTest {
 
     public WebDriver driver;
 
-    @Before
+
+    @BeforeEach
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/macOS/chrome/chromedriver87");
         driver = new ChromeDriver();
@@ -33,7 +35,7 @@ public class BaseTest {
         cookieOK.click();
     }
 
-    @After
+    @AfterEach
     public void afterSuit() {
         driver.quit();
     }
